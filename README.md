@@ -9,4 +9,4 @@ It handles the authentication using simple HTTP requests without any third party
 The authentication steps are described in Github documentation at: 
 https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
 
-
+![Screenshot 01](/resources/Screenshot 2024-03-14 184924.png?raw=true "Github user profile")
