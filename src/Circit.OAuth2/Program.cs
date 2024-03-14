@@ -1,10 +1,20 @@
 using Circit.OAuth2.Components;
+using Circit.OAuth2.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
+builder.Services.AddSingleton<HttpClient>();
+builder.Services.AddSingleton<UserProfileService>();
+builder.Services.AddSingleton<GithubService>();
+
+builder.Services.AddAntDesign();
 
 var app = builder.Build();
 

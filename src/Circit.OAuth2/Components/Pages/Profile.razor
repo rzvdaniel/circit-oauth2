@@ -1,6 +1,46 @@
 ﻿@page "/profile"
 @attribute [StreamRendering]
+@rendermode InteractiveServer
 
-<PageTitle>Profile</PageTitle>
+<PageTitle>Github User Profile</PageTitle>
 
-<h1>Profile</h1>
+<h1>Github User Profile</h1>
+
+<Form Model="@UserProfileService?.UserProfile"
+LabelColSpan="8"
+WrapperColSpan="16">
+
+    <AntiforgeryToken />
+    <input type="hidden" name="ReturnUrl" value="@Code" />
+
+    @if (@context.IsValid)
+    {
+        <p>Welcome, @context?.Name!</p>
+
+        <GridRow Gutter="(16, 0)" Justify="center">
+            <GridCol Xs="24" Md="24">
+                <Avatar Size="10rem" Src="@context?.Avatar_Url" />
+            </GridCol>
+        </GridRow>
+
+        <GridRow Gutter="(16, 0)" Justify="center" Style="margin: 10px">
+            <GridCol Xs="24" Md="24">
+                <TextArea id="Name" Rows="20" class="form-control" Value="@UserProfileService.UserProfileToJson" />
+            </GridCol>
+        </GridRow>
+    }
+    else
+    {
+        if (string.IsNullOrEmpty(Error))
+        {
+            <span>Loading user profile...</span>
+        }
+    }
+
+    @if(!string.IsNullOrEmpty(Error))
+    {
+        <Alert Message="@Error" Type="error" ShowIcon="true" />
+    }
+
+</Form>
+
