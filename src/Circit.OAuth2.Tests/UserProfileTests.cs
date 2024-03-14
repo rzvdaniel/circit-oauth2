@@ -17,7 +17,7 @@ namespace Circit.OAuth2.Tests
         }
 
         [TestMethod]
-        public void invalidUserProfile()
+        public void InvalidUserProfile()
         {
             var userProfile = new UserProfile();
 
