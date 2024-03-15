@@ -3,7 +3,9 @@
 ## Overview
 
 This project demonstrates OAuth2 login using a Github app, and displaying of the authenticated user public details. 
-It is made using .NET 8 and Blazor, suing Ant.Design for UI controls.
+
+### Tech stack
+.NET 8, C#, Blazor, Ant.Design.
 
 The appllication scope is to handle Github authentication using simple HTTP requests without any third party library.
 
