@@ -2,12 +2,10 @@
 
 ## Overview
 
-This project demonstrates OAuth2 login using a Github app, and displaying of the authenticated user public details. 
+This project demonstrates OAuth2 login using a Github app, and displaying of the authenticated user public details. The appllication scope is to handle Github authentication using simple HTTP requests without any third party library.
 
 ### Tech stack
 .NET 8, C#, Blazor, Ant.Design.
-
-The appllication scope is to handle Github authentication using simple HTTP requests without any third party library.
 
 ### Configure
 It requires a Github *ClientId* and *ClientSecret* which must be added into corresponding configuration in ``appsettings.json``.
